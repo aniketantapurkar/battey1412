@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battery life</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <style>
+
+        body, div, form, input, label {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: #666;
+      align-items: center;
+      text-align: center;
+      backgroundimage: url("https://hdwallsource.com/img/2015/5/battery-wallpaper-47427-48962-hd-wallpapers.jpg");
+      }
+
+
+      h1 {
+      line-height: 50px;
+      font-size: 50px;
+      z-index: 2;
+      }
+
+      input {
+      margin-bottom: 15px;
+      border: 3px solid #ccc;
+      border-radius: 10px;
+      }
+
+<!--BUTTON-->
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #004d00;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #008000;
+      }
+
+      body{
+      background-image: url("https://hdwallsource.com/img/2015/5/battery-wallpaper-47427-48962-hd-wallpapers.jpg");
+      }
+    </style>
+</head>
+
+<body>
+        <div class="textbox" >
+            <form action="{{url_for('predict')}} methode='post">
+                <div class="banner">
+                    <h1>Battery Life Documents</h1>
+                    <h2>Basic Classifier</h2>
+                </div><br><br>
+                <div class="item">
+
+                    <label for="min1">What is min?</label>
+                    <div class="min1-item">
+                        <input id="first" name="min1" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="log10_Var100_10">What is log variance</label>
+                    <div class="log10_Var100_10-item">
+                        <input id="second" name="log10_Var100_10" placeholder="Type Numbers" required/>
+                    </div>
+                    </div>
+
+                    <label for="Dis_max">What is Dis_max</label>
+                    <div class="Dis_max=item">
+                        <input id="third" name="Dis_max" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="Slope">What is Slope?</label>
+                    <div class="Slope-item">
+                        <input id="fourth" name="Slope" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="charge_tym">What is Charge time</label>
+                    <div class="charge_tym-item">
+                        <input id="five" name="charge_tym" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="Intercept">What is Intercept?</label>
+                    <div class="Intercept-item">
+                        <input id="six" name="Intercept" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="Intercept">What is integration?</label>
+                    <div class="Intergration-item">
+                        <input id="seven" name="Intergration" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="IR_min">What is iR_min?</label>
+                    <div class="IR_min-item">
+                        <input id="eight" name="IR_min" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <label for="IR_min">What is iR_diff?</label>
+                    <div class="IR_diff-item">
+                        <input id="nine" name="IR_diff" placeholder="Type Numbers" required/>
+                    </div>
+
+                    <div class="btn-block">
+                        <button type="submit" id="sub" href="/">Calculate the Cycle</button>
+                    </div>
+
+
+
+            </form>
+
+            <br><br><h3>{{ prediction_text }}<h3>
+
+        </div>
+
+</body>
+</html>
